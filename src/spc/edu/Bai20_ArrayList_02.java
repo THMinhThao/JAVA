@@ -7,31 +7,31 @@ package spc.edu;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
  * @author Administrator
  */
-public class Bai20_ArrayList_01 
+public class Bai20_ArrayList_02 
 {
     public static void main(String[] args) 
     {
         System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
         System.out.println(" CHUONG TRINH NHAP VAO ArrayList ");
-        ArrayList<String> s = new ArrayList<String>();
+        ArrayList<String> sinhvien = new ArrayList<String>();
+        Scanner nhap = new Scanner(System.in);
         
-        s.add(" Thảo 1 ");
-        s.add(" Thảo 2 ");
-        s.add(" Thảo 3 ");
-        s.add(" Thảo 4 ");
-        s.add(" Thảo 5 ");
-        s.add(" Thảo 6 ");
-        s.remove (2);
-        s.remove (" Thảo 1 ");
-        
-        for (int i = 0; i < s.size(); i++)
+        while(true)
         {
-            System.out.println(s.get(i));
+            System.out.println(" Nhập tên sinh viên : ");
+            String s = nhap.next();
+            
+            if("0".equals(s)) break;
+            
+            sinhvien.add(s); 
         }
-    }
+        System.out.println(" Danh sách sinh viên là : " + sinhvien.toString());
+        System.out.println("\n Tổng số có : " + sinhvien.size() + " sinh viên ");        
+      }
 }
