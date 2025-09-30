@@ -15,6 +15,7 @@ public class Scientific_Jirame extends javax.swing.JFrame {
      */
     public Scientific_Jirame() {
         initComponents();
+        rbtnOn.setEnabled(false);
     }
         double num1, num2,result;
         String opr;
@@ -22,6 +23,9 @@ public class Scientific_Jirame extends javax.swing.JFrame {
     public void enable()
     {
         txtBang.setEnabled(true);
+        
+        rbtnOn.setEnabled(false);
+        rbtnOff.setEnabled(true);
         
         btn0.setEnabled(true);
         btn1.setEnabled(true);
@@ -50,20 +54,59 @@ public class Scientific_Jirame extends javax.swing.JFrame {
         btnSinh.setEnabled(true);
         btnCosh.setEnabled(true);
         btnLog.setEnabled(true);
-        btn0.setEnabled(true);
-        btn0.setEnabled(true);
-        btn0.setEnabled(true);
-        btn0.setEnabled(true);
-        btn0.setEnabled(true);
-        btn0.setEnabled(true);
-        btn0.setEnabled(true);
-        btn0.setEnabled(true);
-        
-        
-        
-        
+        btn1x.setEnabled(true);
+        btnX2.setEnabled(true);
+        btnX3.setEnabled(true);
+        btnXy.setEnabled(true);
+        btnN.setEnabled(true);
+        btnB.setEnabled(true);
+        btnClr.setEnabled(true);
+      
     }
+       
+    public void disable()
+    {
+        txtBang.setEnabled(false);
         
+        rbtnOn.setEnabled(true);
+        rbtnOff.setEnabled(false);
+        
+        btn0.setEnabled(false);
+        btn1.setEnabled(false);
+        btn2.setEnabled(false);
+        btn3.setEnabled(false);
+        btn4.setEnabled(false);
+        btn5.setEnabled(false);
+        btn6.setEnabled(false); 
+        btn7.setEnabled(false);
+        btn8.setEnabled(false);
+        btn9.setEnabled(false);
+        btnKQ.setEnabled(false);
+        btnCong.setEnabled(false);
+        btnTru.setEnabled(false);
+        btnNhan.setEnabled(false);
+        btnChia.setEnabled(false);
+        btnPhan.setEnabled(false);
+        btnCongTru.setEnabled(false);
+        btnCham.setEnabled(false);
+        btnR.setEnabled(false);
+        btnExp.setEnabled(false);
+        btnSin.setEnabled(false);
+        btnCos.setEnabled(false);
+        btnTan.setEnabled(false);
+        btnTanh.setEnabled(false);
+        btnSinh.setEnabled(false);
+        btnCosh.setEnabled(false);
+        btnLog.setEnabled(false);
+        btn1x.setEnabled(false);
+        btnX2.setEnabled(false);
+        btnX3.setEnabled(false);
+        btnXy.setEnabled(false);
+        btnN.setEnabled(false);
+        btnB.setEnabled(false);
+        btnClr.setEnabled(false);
+      
+    }
         
     /**
      * This method is called from within the constructor to initialize the form.
@@ -122,6 +165,11 @@ public class Scientific_Jirame extends javax.swing.JFrame {
 
         rbtnOff.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         rbtnOff.setText("OFF");
+        rbtnOff.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnOffActionPerformed(evt);
+            }
+        });
 
         rbtnOn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         rbtnOn.setText("ON");
@@ -213,6 +261,11 @@ public class Scientific_Jirame extends javax.swing.JFrame {
 
         btnCongTru.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnCongTru.setText("+/-");
+        btnCongTru.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCongTruActionPerformed(evt);
+            }
+        });
 
         btnLog.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnLog.setText("log");
@@ -816,8 +869,7 @@ public class Scientific_Jirame extends javax.swing.JFrame {
           double t= Double.parseDouble(txtBang.getText());
           
           double fact=1;
-          int a = 0;
-          while(a!=0)
+          while(t!=0)
           {
                  fact = fact * t;
                  t--;
@@ -828,8 +880,21 @@ public class Scientific_Jirame extends javax.swing.JFrame {
 
     private void rbtnOnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnOnActionPerformed
         // TODO add your handling code here:
-        
+        enable();
     }//GEN-LAST:event_rbtnOnActionPerformed
+
+    private void rbtnOffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnOffActionPerformed
+        // TODO add your handling code here:
+        disable();
+    }//GEN-LAST:event_rbtnOffActionPerformed
+
+    private void btnCongTruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCongTruActionPerformed
+        // TODO add your handling code here:
+        double t= Double.parseDouble(String.valueOf(txtBang.getText()));
+        
+        t=t*(-1);
+        txtBang.setText(String.valueOf(t));
+    }//GEN-LAST:event_btnCongTruActionPerformed
 
     /**
      * @param args the command line arguments
